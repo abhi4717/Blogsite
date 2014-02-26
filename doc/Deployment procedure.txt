@@ -1,0 +1,9 @@
+1. Clean the solution
+2. Build the solution
+3. Run unit tests
+4. Verify the coverage
+5. Run functional tests
+6. Run regression tests
+7. Check code quality
+8. Version the system
+9. Deploy
