@@ -1,3 +1,10 @@
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<Import Project = "C:\Program Files\MSBuild\ExtensionPack\4.0\MSBuild.ExtensionPack.VersionNumber.targets" />
-</Project>
+ <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
+	<PropertyGroup>
+		<PreTestRunTargets>Clean;Build</PreTestRunTargets>
+		<NunitToolsPath>..\..\packages\NUnit.Runners.2.6.3\tools</NunitToolsPath>
+	</PropertyGroup>
+	<Target Name="RunUnitTest" DependsOnTarget="$(PreTestRunTargets)">
+		<Nunit ToolPath="$(NunitToolsPath)" DisableShadowCopy="True" Assemblies="$(AssemblyName)" OutputXmlFile="unit-test-results.xml" />
+	</Target>
+ </Project>

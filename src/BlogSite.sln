@@ -7,6 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogSite", "BlogSite\BlogSi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogSite.Tests", "BlogSite.Tests\BlogSite.Tests.csproj", "{0AE7F93E-E96C-4744-B8BB-60D50276DE98}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{978E2D81-E382-499D-8B97-314D46171E3E}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blogsite.FunctionalTest", "Blogsite.FunctionalTest\Blogsite.FunctionalTest.csproj", "{304BDA25-05A3-4B71-8BBB-3F38B9744761}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +36,14 @@ Global
 		{0AE7F93E-E96C-4744-B8BB-60D50276DE98}.Production|Any CPU.Build.0 = Production|Any CPU
 		{0AE7F93E-E96C-4744-B8BB-60D50276DE98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AE7F93E-E96C-4744-B8BB-60D50276DE98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{304BDA25-05A3-4B71-8BBB-3F38B9744761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{304BDA25-05A3-4B71-8BBB-3F38B9744761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{304BDA25-05A3-4B71-8BBB-3F38B9744761}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{304BDA25-05A3-4B71-8BBB-3F38B9744761}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{304BDA25-05A3-4B71-8BBB-3F38B9744761}.Production|Any CPU.ActiveCfg = Release|Any CPU
+		{304BDA25-05A3-4B71-8BBB-3F38B9744761}.Production|Any CPU.Build.0 = Release|Any CPU
+		{304BDA25-05A3-4B71-8BBB-3F38B9744761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{304BDA25-05A3-4B71-8BBB-3F38B9744761}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
