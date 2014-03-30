@@ -108,3 +108,7 @@ Backup*/
 UpgradeLog*.XML
 
 Web.config
+/src/BlogSite.Tests/unit-test-results.xml
+/src/Blogsite.FunctionalTest/unit-test-results.xml
+/src/Blogsite.IntegrationTest/unit-test-results.xml
+/src/Blogsite.RegressionTest/unit-test-results.xml
