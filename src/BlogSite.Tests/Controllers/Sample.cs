@@ -12,6 +12,7 @@ namespace BlogSite.Tests.Controllers
         }
 
         [Test]
+        [Ignore]
         public void unsuccessful_test_case()
         {
             Assert.IsTrue(false);

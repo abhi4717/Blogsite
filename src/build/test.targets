@@ -1,16 +1,19 @@
- <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-   <UsingTask AssemblyFile="$(MSBuildStartupDirectory)\Lib\MsBuildCommunityTasks\MSBuild.Community.Tasks.dll" TaskName="NUnit"/>
-	<PropertyGroup>
-		<PreTestRunTargets>Clean;Build</PreTestRunTargets>
-		<NunitToolsPath>..\..\packages\NUnit.Runners.2.6.3\tools</NunitToolsPath>
-	</PropertyGroup>
-	<Target Name="RunUnitTest" DependsOnTargets="$(PreTestRunTargets)">
-		<NUnit ToolPath="$(NunitToolsPath)" DisableShadowCopy="True" Assemblies="$(AssemblyName)" OutputXmlFile="unit-test-results.xml" />
-	</Target>
-	<Target Name="RunFunctionalTest" DependsOnTargets="RunUnitTest">
-	</Target>
-	<Target Name="RunIntegrationTest" DependsOnTargets="RunFunctionalTest">
-	</Target>
-	<Target Name="RunRegressionTest" DependsOnTargets="RunIntegrationTest">
-	</Target>
- </Project>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask AssemblyFile="$(MSBuildStartupDirectory)\..\.build\MSBuild.Community.Tasks.dll" TaskName="NUnit"/>
+  <PropertyGroup>
+    <PreTestRunTargets>Clean;Build</PreTestRunTargets>
+    <NunitToolsPath>..\packages\NUnit.Runners.2.6.3\tools</NunitToolsPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <
+  </ItemGroup>
+  <Target Name="RunUnitTest" DependsOnTargets="$(PreTestRunTargets)">
+    <NUnit ToolPath="$(NunitToolsPath)" DisableShadowCopy="True" Assemblies="$(OutputPath)$(AssemblyName).dll" OutputXmlFile="unit-test-results.xml" />
+  </Target>
+  <Target Name="RunFunctionalTest" DependsOnTargets="RunUnitTest">
+  </Target>
+  <Target Name="RunIntegrationTest" DependsOnTargets="RunFunctionalTest">
+  </Target>
+  <Target Name="RunRegressionTest" DependsOnTargets="RunIntegrationTest">
+  </Target>
+</Project>
