@@ -1,0 +1,5 @@
+OpenCover command
+C:\Users\Abhishek\Documents\Visual Studio 2013\Projects\Blogsite\src\packages\OpenCover.4.5.2506>OpenCover.Console.exe -target:..\NUnit.Runners.2.6.3\tools\nunit-console.exe -targetargs:"..\..\BlogSite.Tests\bin\Development\BlogSite.Tests.dll /noshadow" -output:C:\temp\output.xml -register:user
+
+Report Generator command
+..\ReportGenerator.1.9.1.0\ReportGenerator.exe C:\temp\output.xml C:\temp
