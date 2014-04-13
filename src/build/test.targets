@@ -13,7 +13,7 @@
   <Target Name="RunTest" DependsOnTargets="$(PreTestRunTargets)">
     <NUnit ToolPath="$(NunitToolsPath)" DisableShadowCopy="True" Assemblies="$(OutputPath)$(AssemblyName).dll" OutputXmlFile="unit-test-results.xml" />
   </Target>
-  <Target Name="WriteCoverageResult" DependsOnTargets="$(PreTestRunTargets)">
+  <Target Name="WriteCoverageResult" DependsOnTargets="RunTest">
     <MakeDir Condition="!Exists($(OpenCoverageFolder))" Directories="$(OpenCoverageFolder)"/>
     <MakeDir Condition="!Exists($(CoverageReportFolder))" Directories="$(CoverageReportFolder)"/>
     <Message Text="Generating Coverage details. Executing command: $(OpenCoverToolPath) -target:$(NunitToolsPath)\nunit-console.exe -targetargs:&quot;$(OutputPath)$(AssemblyName).dll /noshadow&quot; -output:$(OpenCoverageFolder)\output.xml -register:user" />
