@@ -28,6 +28,6 @@
   </Target>
 
   <Target Name="RunTestCases" DependsOnTargets="$(PrePublishTargets)">
-    <MSBuild Projects="%(TestProjects.ProjectFile)" Targets="RunTest" ContinueOnError="false"/>
+    <MSBuild Projects="%(TestProjects.ProjectFile)" Properties="TestType=%(TestProjects.Identity)" Targets="WriteCoverageResult" ContinueOnError="false"/>
   </Target>
 </Project>
