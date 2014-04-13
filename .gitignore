@@ -112,3 +112,4 @@ Web.config
 /src/Blogsite.FunctionalTest/unit-test-results.xml
 /src/Blogsite.IntegrationTest/unit-test-results.xml
 /src/Blogsite.RegressionTest/unit-test-results.xml
+/src/Report
