@@ -3,8 +3,22 @@
   <PropertyGroup>
     <PreTestRunTargets>Clean;Build</PreTestRunTargets>
     <NunitToolsPath>..\packages\NUnit.Runners.2.6.3\tools</NunitToolsPath>
+    <OpenCoverToolPath>..\packages\OpenCover.4.5.2506\OpenCover.Console.exe</OpenCoverToolPath>
+    <ReportGeneratorToolPath>..\packages\ReportGenerator.1.9.1.0\ReportGenerator.exe</ReportGeneratorToolPath>
+    <ReportFolder>..\Report\</ReportFolder>
+    <OpenCoverageFolder>$(ReportFolder)OpenCover</OpenCoverageFolder>
+    <CoverageReportFolder>$(ReportFolder)CoverageReport</CoverageReportFolder>
   </PropertyGroup>
   <Target Name="RunTest" DependsOnTargets="$(PreTestRunTargets)">
     <NUnit ToolPath="$(NunitToolsPath)" DisableShadowCopy="True" Assemblies="$(OutputPath)$(AssemblyName).dll" OutputXmlFile="unit-test-results.xml" />
+  </Target>
+  <Target Name="WriteCoverageResult" DependsOnTargets="$(PreTestRunTargets)">
+    <MakeDir Condition="!Exists($(ReportFolder))" Directories="$(ReportFolder)" />
+    <MakeDir Condition="!Exists($(OpenCoverageFolder))" Directories="$(OpenCoverageFolder)"/>
+    <MakeDir Condition="!Exists($(CoverageReportFolder))" Directories="$(CoverageReportFolder)"/>
+    <Message Text="Generating Coverage details. Executing command: $(OpenCoverToolPath) -target:$(NunitToolsPath)\nunit-console.exe -targetargs:&quot;$(OutputPath)$(AssemblyName).dll /noshadow&quot; -output:$(OpenCoverageFolder)\output.xml -register:user" />
+    <Exec Command="$(OpenCoverToolPath) -target:$(NunitToolsPath)\nunit-console.exe -targetargs:&quot;$(OutputPath)$(AssemblyName).dll /noshadow&quot; -output:$(OpenCoverageFolder)\output.xml -register:user" ContinueOnError="false"/>
+    <Message Text="Generating Code Coverage report. Executing command: $(ReportGeneratorToolPath) $(OpenCoverageFolder)\output.xml $(CoverageReportFolder)" />
+    <Exec Command="$(ReportGeneratorToolPath) $(OpenCoverageFolder)\output.xml $(CoverageReportFolder)" ContinueOnError="false"/>
   </Target>
 </Project>
