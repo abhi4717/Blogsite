@@ -1,3 +1,14 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<Import Project = "C:\Program Files\MSBuild\ExtensionPack\4.0\MSBuild.ExtensionPack.VersionNumber.targets" />
+  <PropertyGroup>
+    <PreBuildTarget>Clean;Build</PreBuildTarget>
+    <FxCopReportFolder>..\Report\FxCopAnalysis</FxCopReportFolder>
+    <FxCopExecutable>C:\Program Files (x86)\Microsoft Fxcop 10.0\FxCopCmd.exe</FxCopExecutable>
+    <FxCopRulesPath>C:\Program Files (x86)\Microsoft FxCop 10.0\Rules</FxCopRulesPath>
+    <FxCopResultsXml>$(FxCopReportFolder)\report.xml</FxCopResultsXml>
+  </PropertyGroup>
+  <Target Name="FxCopCodeAnalysis" DependsOnTargets="$(PreBuildTarget)">
+    <MakeDir Condition="!Exists($(FxCopReportFolder))" Directories="$(FxCopReportFolder)" />
+    <Message Text="Executing FxCopAnalysis. Command: &quot;$(FxCopExecutable)&quot; /c /f:&quot;$(OutputPath).$(AssemblyName).dll&quot; /d:&quot;$(OutputPath)&quot; /r:$(FxCopRulesPath) /out:&quot;$(FxCopResultsXml)&quot;"/>
+    <Exec Command="&quot;$(FxCopExecutable)&quot; /c /f:$(OutputPath)$(AssemblyName).dll /d:$(OutputPath) /r:&quot;$(FxCopRulesPath)&quot; /out:$(FxCopResultsXml)" ContinueOnError="false"/>
+  </Target>
 </Project>

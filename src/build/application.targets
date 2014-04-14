@@ -27,7 +27,11 @@
     <TransformXml Source ="Web.config" Transform="Web.$(Configuration).config" Destination="$(OutputPath)Web.config"/>
   </Target>
 
-  <Target Name="RunTestCases" DependsOnTargets="$(PrePublishTargets)">
+  <Target Name="RunTestCases" DependsOnTargets="ConfigTransformation">
     <MSBuild Projects="%(TestProjects.ProjectFile)" Properties="TestType=%(TestProjects.Identity)" Targets="WriteCoverageResult" ContinueOnError="false"/>
+  </Target>
+
+  <Target Name="RunFxCopAnalysis" DependsOnTargets="RunTestCases">
+    <MSBuild Projects="$(MSBuildProjectFile)" Targets="FxCopCodeAnalysis" ContinueOnError="false"/>
   </Target>
 </Project>
