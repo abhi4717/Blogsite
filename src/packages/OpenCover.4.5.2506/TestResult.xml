@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Users\Abhishek\Documents\Visual Studio 2013\Projects\Blogsite\src\BlogSite.Tests\bin\Development\BlogSite.Tests.dll" total="1" errors="0" failures="0" not-run="1" inconclusive="0" ignored="1" skipped="0" invalid="0" date="2014-04-13" time="18:33:26">
+  <environment nunit-version="2.6.3.13283" clr-version="2.0.50727.5477" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Users\Abhishek\Documents\Visual Studio 2013\Projects\Blogsite\src\packages\OpenCover.4.5.2506" machine-name="ABHISHEK4717" user="Abhishek" user-domain="Abhishek4717" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\Users\Abhishek\Documents\Visual Studio 2013\Projects\Blogsite\src\BlogSite.Tests\bin\Development\BlogSite.Tests.dll" executed="True" result="Success" success="True" time="0.217" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="BlogSite" executed="True" result="Success" success="True" time="0.187" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Tests" executed="True" result="Success" success="True" time="0.185" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="Controllers" executed="True" result="Success" success="True" time="0.184" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="Sample" executed="True" result="Success" success="True" time="0.179" asserts="0">
+                    <results>
+                      <test-case name="BlogSite.Tests.Controllers.Sample.successful_test_case" executed="True" result="Success" success="True" time="0.069" asserts="1" />
+                      <test-case name="BlogSite.Tests.Controllers.Sample.unsuccessful_test_case" executed="False" result="Ignored">
+                        <reason>
+                          <message><![CDATA[]]></message>
+                        </reason>
+                      </test-case>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
