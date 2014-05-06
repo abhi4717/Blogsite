@@ -2,8 +2,8 @@
   <PropertyGroup>
     <PreBuildTarget>Clean;Build</PreBuildTarget>
     <FxCopReportFolder>..\Report\FxCopAnalysis</FxCopReportFolder>
-    <FxCopExecutable>C:\Program Files (x86)\Microsoft Fxcop 10.0\FxCopCmd.exe</FxCopExecutable>
-    <FxCopRulesPath>C:\Program Files (x86)\Microsoft FxCop 10.0\Rules</FxCopRulesPath>
+    <FxCopExecutable>C:\Program Files (x86)\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\FxCop\FxCopCmd.exe</FxCopExecutable>
+    <FxCopRulesPath>C:\Program Files (x86)\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\FxCop\Rules</FxCopRulesPath>
     <FxCopResultsXml>$(FxCopReportFolder)\report.xml</FxCopResultsXml>
   </PropertyGroup>
   <Target Name="FxCopCodeAnalysis" DependsOnTargets="$(PreBuildTarget)">
