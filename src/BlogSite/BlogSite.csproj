@@ -251,7 +251,9 @@
     <Content Include="Content\images\templatemo_thumb_05.jpg" />
     <Content Include="Content\images\templatemo_thumb_06.jpg" />
     <Content Include="Content\templatemo_style.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -297,11 +299,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>3767</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:3767/</IISUrl>
+          <IISUrl>http://localhost:3768/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -312,7 +314,7 @@
     </VisualStudio>
   </ProjectExtensions>
   <Import Project="../build/application.targets" />
-  <Import Project="../build/quality.targets"/>
+  <Import Project="../build/quality.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
