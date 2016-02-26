@@ -1,83 +1,41 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    @Styles.Render("~/Content/css/GreenBlog")
+
 </head>
 <body>
-    <div id="templatemo_menu_panel">
-        <div id="templatemo_menu_section">
-            <ul>
-                <li><a href="#" class="current">Home</a></li>
-                <li><a href="#">Archives</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-    <div id="templatemo_header_content_container">
-        <div id="templatemo_header_section">
-            <div id="templatemo_title_section">
-                Software Designs
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-        </div>
-        <div id="templatemo_content">
-            <div id="templatemo_content_left">
-                <div class="container body-content">
-                    @RenderBody()
-
-                </div>
-            </div>
-            <div id="templatemo_content_right">
-
-                <div class="templatemo_right_section">
-                    <h2>Categories</h2>
-                    <ul>
-                        <li><a href="#">Morbi nec magna pulvinar</a></li>
-                        <li><a href="#">Suspendisse rhoncus lectus</a></li>
-                        <li><a href="#">Pellentesque rutrum est</a></li>
-                        <li><a href="#">Nunc blandit orci</a></li>
-                    </ul>
-                </div>
-
-                <div class="templatemo_right_section">
-                    <h2>Archives</h2>
-                    <ul>
-                        <li><a href="#">January 2048</a></li>
-                        <li><a href="#">December 2047</a></li>
-                        <li><a href="#">November 2047</a></li>
-                        <li><a href="#">October 2047</a></li>
-                        <li><a href="#">September 2047</a></li>
-                    </ul>
-                </div>
-
-                <div class="templatemo_right_section">
-                    <h2>Recent Posts</h2>
-                    <ul>
-                        <li>Lorem Ipsum on <a href="#">Donec mollis aliquet</a></li>
-                        <li>Consectetuer on <a href="#">Suspendisse a nibh</a></li>
-                        <li>Sed on <a href="#">Pellentesque vitae magna</a></li>
-                        <li>Vitae Neque on <a href="#">Nunc blandit orci sit amet</a></li>
-                        <li>Donec Mollis on <a href="#">Maecenas adipiscing</a></li>
-                    </ul>
-                </div>
-
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div id="templatemo_bottom_panel">
-        <div id="templatemo_bottom_section">
-        </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
     </div>
-    <div id="templatemo_footer_panel">
-        <div id="templatemo_footer_section">
-            <a href="http://www.iwebsitetemplate.com" target="_parent">Website Templates</a> by <a href="http://www.templatemo.com" target="_parent">Free CSS Templates</a>.
-            This template has been modified to enhance the viewability of the website. Content presented are views of the author.
-        </div>
-    </div>
-
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

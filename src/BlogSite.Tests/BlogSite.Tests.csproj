@@ -127,12 +127,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BlogSite\BlogSite.csproj">
-      <Project>{65A31D3C-0F1E-4601-9A27-34B6413571D3}</Project>
-      <Name>BlogSite</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="..\build\test.targets" />
